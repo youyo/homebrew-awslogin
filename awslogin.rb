@@ -5,7 +5,8 @@ class Awslogin < Formula
   sha256 "993d3bca9f49abc1b1855b6996450e13f7443775b34b090bdff8e0699022cbfe"
 
   def install
-    bin.install "bin/awslogin"
+    system "mv awslogin_darwin_amd64 awslogin"
+    bin.install "awslogin"
   end
 
   test do
