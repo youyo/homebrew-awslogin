@@ -1,5 +1,5 @@
 .DEFAULT_GOAL := help
-Version := 1.1.4
+Version := 1.1.5
 
 ## checksum
 checksum:
