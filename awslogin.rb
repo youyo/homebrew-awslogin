@@ -1,8 +1,8 @@
 class Awslogin < Formula
   desc "AWS management console login tool."
   homepage "https://github.com/youyo/awslogin"
-  url "https://github.com/youyo/awslogin/releases/download/1.1.6/awslogin"
-  sha256 "9d995abf03b685ce5a9f562847b700d2a0397ae6291798172535bf63ebcde40b"
+  url "https://github.com/youyo/awslogin/releases/download/1.1.7/awslogin"
+  sha256 "232be38e98eda77712a14a1cac7e49294e321c5381d79a8de9259d13be504d1b"
   depends_on "peco" => :run
 
   def install
