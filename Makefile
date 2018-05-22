@@ -3,9 +3,9 @@
 ## release
 release:
 	wget https://github.com/youyo/awslogin/releases/download/${AWSLOGIN_VERSION}/awslogin
-	$(eval sha256 := $(shell shasum -a 256 awslogin))
+	$(eval SHA256 := $(shell shasum -a 256 awslogin | cut -d' ' -f1))
 	rm -f awslogin
-	cat awslogin.rb.template | sed "s|__VERSION__|${AWSLOGIN_VERSION}|g" | sed "s|__SHA256__|$(sha256)|g" > awslogin.rb
+	cat awslogin.rb.template | sed "s|__VERSION__|${AWSLOGIN_VERSION}|g" | sed "s|__SHA256__|$(SHA256)|g" > awslogin.rb
 	git config --global user.email 1003ni2@gmail.com
 	git config --global user.name youyo
 	git add .
