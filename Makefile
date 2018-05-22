@@ -9,7 +9,7 @@ release:
 	git config --global user.email 1003ni2@gmail.com
 	git config --global user.name youyo
 	git add .
-	git commit -m "bump up"
+	git commit -m "[skip ci] bump up"
 	git tag ${AWSLOGIN_VERSION}
 	git push origin master --tags
 
@@ -17,5 +17,5 @@ release:
 help:
 	@make2help $(MAKEFILE_LIST)
 
-.PHONY: checksum help
+.PHONY: help
 .SILENT:
