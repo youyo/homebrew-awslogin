@@ -1,0 +1,21 @@
+workflows:
+  version: 2
+  main:
+    jobs:
+      - release:
+          filters:
+            branches:
+              only: master
+
+version: 2
+jobs:
+  release:
+    working_directory: /go/src/github.com/youyo/homebrew-awslogin
+    docker:
+      - image: circleci/golang:1
+    steps:
+      - checkout
+      - run:
+          name: Release
+          command: |
+            make release
