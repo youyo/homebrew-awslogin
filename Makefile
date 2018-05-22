@@ -3,7 +3,7 @@
 ## release
 release:
 	wget https://github.com/youyo/awslogin/releases/download/${AWSLOGIN_VERSION}/awslogin
-	checksum=$(shasum -a 256 awslogin | cut -d' ' -f1)
+	checksum=$(shell shasum -a 256 awslogin | cut -d' ' -f1)
 	echo ${checksum}
 	cat awslogin.rb.template | sed "s|__VERSION__|${AWSLOGIN_VERSION}|g" | sed "s|__SHA256__|${checksum}|g" | tee awslogin.rb
 	rm -f awslogin
