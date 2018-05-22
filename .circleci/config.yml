@@ -18,4 +18,8 @@ jobs:
       - run:
           name: Release
           command: |
-            make release
+            # make release
+            wget https://github.com/youyo/awslogin/releases/download/${AWSLOGIN_VERSION}/awslogin
+            checksum=$(shasum -a 256 awslogin | cut -d' ' -f1)
+            cat awslogin.rb.template | sed "s|__VERSION__|${AWSLOGIN_VERSION}|g" | sed "s|__SHA256__|${checksum}|g" | tee awslogin.rb
+            rm -f awslogin
